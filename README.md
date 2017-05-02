@@ -4,9 +4,9 @@ Application for auto\manual creating English dictations and then writing them
 ## Funtionality
 - an auto\manual dictation creating
 - writing a dictations
-- view a written dictation results
+- view the written dictation results
 - check the meaning of the words
-- todo list for the words
+- manage todo list
 ## Technical requirements
 - Android 4.1+
 - Permissions

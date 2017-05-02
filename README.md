@@ -1,4 +1,4 @@
-# Dication application
+# Dictation application
 ## About
 Application for auto\manual creating English dictations and then writing them
 ## Funtionality

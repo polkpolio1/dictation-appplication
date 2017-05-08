@@ -11,7 +11,7 @@ import {
 export default class TranslatorContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: 'Useless Placeholder' };
+    this.state = { text: '' };
   }
   static navigationOptions = {
     title: 'Translator',
@@ -19,15 +19,46 @@ export default class TranslatorContainer extends Component {
   render() {
     return (
       <View style={styles.centered}>
+
         <Text style={styles.headerText}>
           Enter your word:
         </Text>
+
         <TextInput
+          underlineColorAndroid="transparent"
           selectTextOnFocus={true}
-          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          style={styles.input}
+          placeholder = 'Word to translate'
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
         />
+
+        <View style={styles.resultView}>
+          <Text style={styles.resultHeader}>
+            Translation:
+          </Text>
+          <Text style={styles.resultText}>
+            Привет, здравствуй
+          </Text>
+        </View>
+
+        <View style={styles.resultView}>
+          <Text style={styles.resultHeader}>
+            Defenition:
+          </Text>
+          <Text style={styles.resultText}>
+            An expression or gesture of greeting
+          </Text>
+        </View>
+
+        <View style={styles.resultView}>
+          <Text style={styles.resultHeader}>
+            Synonyms:
+          </Text>
+          <Text style={styles.resultText}>
+            Hi, hello
+          </Text>
+        </View>
       </View>
     );
   }
@@ -37,25 +68,34 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 28,
     color: '#000',
-    textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: 10,
   },
   centered: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    paddingTop: 20
+    padding: 20
   },
-  buttonContainer: {
-    width: 240,
-    padding:10,
-    height:45,
-    borderRadius:4,
-    backgroundColor: '#000'
+  input: {
+    borderColor: 'grey',
+    borderWidth: 1,
+    borderRadius: 4,
+    height: 50,
+    fontSize: 16,
+    paddingLeft: 10,
+    paddingRight: 10,
+    marginBottom: 10,
   },
-  button: {
+  resultView: {
+    marginTop: 10,
+  },
+  resultHeader: {
     fontSize: 20,
-    color: '#fff',
-    textAlign: 'center'
+    color: '#000',
+    fontWeight: 'bold',
+  },
+  resultText: {
+    fontSize: 20,
+    color: '#000',
   },
 });

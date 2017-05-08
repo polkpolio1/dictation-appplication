@@ -50,16 +50,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  buttonContainer: {
-    width: 240,
-    padding:10,
-    height:45,
-    borderRadius:4,
-    backgroundColor: '#000'
-  },
-  button: {
-    fontSize: 20,
-    color: '#fff',
-    textAlign: 'center'
-  },
 });

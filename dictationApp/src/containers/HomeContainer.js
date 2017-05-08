@@ -5,7 +5,7 @@ import {
   Text,
   View,
   Alert,
-  BackAndroid
+  BackHandler
 } from 'react-native';
 
 const onButtonPress = () => {
@@ -20,19 +20,18 @@ export default class HomeContainer extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.centered}>
-        <View>
+
+        <View style={styles.buttonsView}>
           <Text style={styles.headerText}>
             Dictation application
           </Text>
 
-          <View style={styles.buttonsView}>
             <Button onPress={() => navigate('Dictation')} text={"Write a dictation"}/>
             <Button onPress={() => navigate('Vocabulary')} text={"Your words"}/>
             <Button onPress={() => navigate('Translator')} text={"Translator"} />
-          </View>
         </View>
 
-        <Button onPress={BackAndroid.exitApp} text={"Exit"}/>
+        <Button onPress={BackHandler.exitApp} text={"Exit"}/>
           
       </View>
     );
@@ -45,7 +44,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 70
+    padding: 50
   },
   buttonsView: {
     alignSelf: 'stretch'

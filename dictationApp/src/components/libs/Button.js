@@ -41,22 +41,24 @@ export default class Button extends Component {
 
 const styles = StyleSheet.create({
   buttonContainer: {
+    borderColor: '#000',
+    borderWidth: 1,
     marginTop: 5,
-    width: 240,
     padding:10,
     height:45,
     borderRadius:4,
-    backgroundColor: '#000'
+    backgroundColor: '#000',
+    alignSelf: 'stretch'
   },
   buttonContainerPress: {
     borderColor: '#000',
     borderWidth: 1,
     marginTop: 5,
-    width: 240,
     padding:10,
     height:45,
     borderRadius:4,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    alignSelf: 'stretch'
   },
   button: {
     fontSize: 20,

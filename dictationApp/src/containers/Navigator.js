@@ -1,4 +1,4 @@
-import { StackNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation'
 import HomeContainer from './HomeContainer'
 import TranslatorContainer from './TranslatorContainer'
 import VocabularyContainer from './VocabularyContainer'
@@ -9,6 +9,6 @@ const Navigator = StackNavigator({
   Translator: {screen: TranslatorContainer},
   Vocabulary: {screen: VocabularyContainer},
   Dictation: {screen: DictationContainer},
-});
+})
 
 export default Navigator

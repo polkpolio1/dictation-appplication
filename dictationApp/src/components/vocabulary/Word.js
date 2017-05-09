@@ -1,5 +1,5 @@
 import React from 'react'
-import CheckBox from 'react-native-checkbox';
+import CheckBox from 'react-native-checkbox'
 
 const Word = ({onToggleClick, word}) => (
   <CheckBox

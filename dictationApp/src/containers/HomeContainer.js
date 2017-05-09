@@ -1,23 +1,19 @@
-import React, { Component } from 'react';
-import Button from '../components/libs/Button';
+import React, { Component } from 'react'
+import Button from '../components/libs/Button'
 import {
   StyleSheet,
   Text,
   View,
   Alert,
   BackHandler
-} from 'react-native';
-
-const onButtonPress = () => {
-  Alert.alert('Button has been pressed!');
-};
+} from 'react-native'
 
 export default class HomeContainer extends Component {
   static navigationOptions = {
     title: 'Welcome',
   }
   render() {
-    const { navigate } = this.props.navigation;
+    const { navigate } = this.props.navigation
     return (
       <View style={styles.centered}>
 
@@ -26,15 +22,15 @@ export default class HomeContainer extends Component {
             Dictation application
           </Text>
 
-            <Button onPress={() => navigate('Dictation')} text={"Write a dictation"}/>
-            <Button onPress={() => navigate('Vocabulary')} text={"Your words"}/>
-            <Button onPress={() => navigate('Translator')} text={"Translator"} />
+          <Button onPress={() => navigate('Dictation')} text={"Write a dictation"}/>
+          <Button onPress={() => navigate('Vocabulary')} text={"Your words"}/>
+          <Button onPress={() => navigate('Translator')} text={"Translator"} />
         </View>
 
         <Button onPress={BackHandler.exitApp} text={"Exit"}/>
           
       </View>
-    );
+    )
   }
 }
 
@@ -55,4 +51,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 30
   },
-});
+})

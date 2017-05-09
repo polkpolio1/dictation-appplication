@@ -62,13 +62,13 @@ let initialState = [
     learned: false
   },
   {
-    id: 11,
+    id: 10,
     word: 'Man',
     translation: 'Мужик',
     learned: false
   },
   {
-    id: 12,
+    id: 11,
     word: 'Man',
     translation: 'Мужик',
     learned: false

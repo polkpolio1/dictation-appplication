@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { toggleWord, setVisibilityFilter } from '../actions/wordsActions'
+import { toggleWord, setVisibilityFilter, addWord } from '../actions/wordsActions'
 import Vocabulary from '../components/vocabulary/Vocabulary'
 
 const getVisibleWords = (words, filter) => {
@@ -13,10 +13,10 @@ const getVisibleWords = (words, filter) => {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     words: getVisibleWords(state.words, state.visibilityFilter),
-    active: ownProps.filter === state.visibilityFilter
+    filter: state.visibilityFilter
   }
 }
 
@@ -27,6 +27,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onFilterChange: (filter) => {
       dispatch(setVisibilityFilter(filter))
+    },
+    onAddClick: (word, translation) => {
+      dispatch(addWord(word, translation))
     }
   }
 }

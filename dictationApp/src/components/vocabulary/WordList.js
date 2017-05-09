@@ -4,8 +4,8 @@ import {
   Text,
   ScrollView,
   StyleSheet
-} from 'react-native';
-import CheckBox from 'react-native-checkbox';
+} from 'react-native'
+import CheckBox from 'react-native-checkbox'
 import Word from './Word'
 
 const WordList = ({onToggleClick, words}) => {
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
     color: '#000',
     fontWeight: 'bold',
   },
-});
+})

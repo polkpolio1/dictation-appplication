@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Button from '../components/libs/Button';
+import { connect } from 'react-redux'
+import { fetchTranslation } from '../actions/translationActions'
+import { addWord } from '../actions/wordsActions'
 import {
   StyleSheet,
   Text,
@@ -8,14 +11,17 @@ import {
 } from 'react-native';
 
 
-export default class TranslatorContainer extends Component {
+class TranslatorContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: '' };
+    this.state = { 
+      text: ''
+    };
   }
   static navigationOptions = {
     title: 'Translator',
   };
+
   render() {
     return (
       <View style={styles.centered}>
@@ -29,7 +35,10 @@ export default class TranslatorContainer extends Component {
           selectTextOnFocus={true}
           style={styles.input}
           placeholder = 'Word to translate'
-          onChangeText={(text) => this.setState({text})}
+          onChangeText={(text) => { 
+            this.setState({text})
+            this.props.dispatch(fetchTranslation(this.state.text))
+          }}
           value={this.state.text}
         />
 
@@ -38,31 +47,29 @@ export default class TranslatorContainer extends Component {
             Translation:
           </Text>
           <Text style={styles.resultText}>
-            Привет, здравствуй
+            {this.props.translation}
           </Text>
         </View>
 
         <View style={styles.resultView}>
-          <Text style={styles.resultHeader}>
-            Defenition:
-          </Text>
-          <Text style={styles.resultText}>
-            An expression or gesture of greeting
-          </Text>
-        </View>
-
-        <View style={styles.resultView}>
-          <Text style={styles.resultHeader}>
-            Synonyms:
-          </Text>
-          <Text style={styles.resultText}>
-            Hi, hello
-          </Text>
+          <Button onPress={() => {
+            this.props.dispatch(addWord(this.state.text, this.props.translation))
+            this.setState({
+              text: ''
+            })
+          }} text="Add word" />
         </View>
       </View>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    translation: state.translation.translation
+  }
+}
+export default connect(mapStateToProps)(TranslatorContainer)
 
 const styles = StyleSheet.create({
   headerText: {

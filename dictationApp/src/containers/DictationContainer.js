@@ -15,7 +15,7 @@ export default class DictationContainer extends Component {
     return (
       <View>
         <Text>
-          Dictation!
+          Dictati3w4578sdfghjdn!
         </Text>
       </View>
     );

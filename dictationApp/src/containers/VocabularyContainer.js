@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { toggleWord, setVisibilityFilter, addWord } from '../actions/wordsActions'
+import { toggleWord, setVisibilityFilter, addWord, fetchWords } from '../actions/wordsActions'
 import Vocabulary from '../components/vocabulary/Vocabulary'
 
 const getVisibleWords = (words, filter) => {
@@ -22,6 +22,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    receiveWords: () => {
+      dispatch(fetchWords())
+    },
     onWordClick: (id) => {
       dispatch(toggleWord(id))
     },

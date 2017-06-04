@@ -1,16 +1,25 @@
 import React, { Component } from 'react'
 import Button from '../components/libs/Button'
+import { fetchWords } from '../actions/wordsActions'
+import { connect } from 'react-redux'
 import {
   StyleSheet,
   Text,
   View,
   Alert,
-  BackHandler
+  BackHandler,
+  AsyncStorage
 } from 'react-native'
 
-export default class HomeContainer extends Component {
+class HomeContainer extends Component {
   static navigationOptions = {
     title: 'Welcome',
+  }
+  componentDidMount(){
+    this.props.dispatch(fetchWords())
+  }
+  componentDidUpdate(){
+    AsyncStorage.setItem("words", JSON.stringify(this.props.words));
   }
   render() {
     const { navigate } = this.props.navigation
@@ -33,6 +42,16 @@ export default class HomeContainer extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    words: state.words,
+  }
+}
+
+const Home = connect(mapStateToProps)(HomeContainer)
+
+export default Home
 
 const styles = StyleSheet.create({
   centered: {

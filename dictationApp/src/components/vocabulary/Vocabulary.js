@@ -16,7 +16,7 @@ export default class Vocabulary extends Component {
       <View style={styles.centered}>
         <Filter filter={this.props.filter} onFilterChange={this.props.onFilterChange}/>
         <WordList words={this.props.words} onToggleClick={this.props.onWordClick}/>
-        <AddForm onAddClick={this.props.onAddClick}/>
+        <AddForm words={this.props.words} onAddClick={this.props.onAddClick}/>
       </View>
     )
   }

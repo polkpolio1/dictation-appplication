@@ -1,3 +1,4 @@
+export const GET_WORDS = 'GET_WORDS'
 export const ADD_WORD = 'ADD_WORD'
 export const TOGGLE_WORD = 'TOGGLE_WORD'
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'

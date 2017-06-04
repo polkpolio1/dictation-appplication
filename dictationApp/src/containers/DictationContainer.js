@@ -71,7 +71,7 @@ class DictationContainer extends Component {
           </View>
         </View>
       );
-    
+
     let result = 0;
     let resultTable = this.props.dictation.map((word) => {
       if(word.word.toLowerCase() != word.answer.toLowerCase()){
@@ -104,7 +104,6 @@ class DictationContainer extends Component {
     )
   }
 }
-
 
 const mapStateToProps = (state) => {
   return {

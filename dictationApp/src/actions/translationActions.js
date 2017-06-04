@@ -27,13 +27,12 @@ function failureTranslation(err){
 export function fetchTranslation(text) {
   return dispatch => {
     dispatch(requestTranslation())
-    console.log("GO")
-    return fetch('https://translate.yandex.net/api/v1.5/tr.json/translate?lang=en-ru&key=trnsl.1.1.20170529T220102Z.884c77c11f5158ad.bc23445e27b8f76372285f321594318285792756&text=hello')
+    return fetch('http://www.transltr.org/api/translate?to=ru&from=en&text=' + text)
       .then(function(response) {
         return response.json()
       })
       .then((response) => {
-        dispatch(receiveTranslation(response.text[0]))
+        dispatch(receiveTranslation(response.translationText))
       })
       .catch((err) => {
         console.log("ERR", err)

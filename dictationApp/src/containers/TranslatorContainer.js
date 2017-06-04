@@ -26,7 +26,7 @@ class TranslatorContainer extends Component {
     return (
       <View style={styles.centered}>
 
-        <Text style={styles.headerText}>
+        <Text style={styles.resultHeader}>
           Enter your word:
         </Text>
 
@@ -35,10 +35,7 @@ class TranslatorContainer extends Component {
           selectTextOnFocus={true}
           style={styles.input}
           placeholder = 'Word to translate'
-          onChangeText={(text) => { 
-            this.setState({text})
-            this.props.dispatch(fetchTranslation(this.state.text))
-          }}
+          onChangeText={(text) => {this.setState({text})}}
           value={this.state.text}
         />
 
@@ -49,6 +46,12 @@ class TranslatorContainer extends Component {
           <Text style={styles.resultText}>
             {this.props.translation}
           </Text>
+        </View>
+
+        <View style={styles.resultView}>
+          <Button onPress={() => {
+            this.props.dispatch(fetchTranslation(this.state.text))
+          }} text="Translate" />
         </View>
 
         <View style={styles.resultView}>
@@ -72,11 +75,6 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps)(TranslatorContainer)
 
 const styles = StyleSheet.create({
-  headerText: {
-    fontSize: 28,
-    color: '#000',
-    marginBottom: 10,
-  },
   centered: {
     flex: 1,
     flexDirection: 'column',
@@ -87,10 +85,8 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     borderWidth: 1,
     borderRadius: 4,
-    height: 50,
     fontSize: 16,
-    paddingLeft: 10,
-    paddingRight: 10,
+    padding: 10,
     marginBottom: 10,
   },
   resultView: {

@@ -22,7 +22,7 @@ export default class HomeContainer extends Component {
             Dictation application
           </Text>
 
-          <Button onPress={() => navigate('Dictation')} text={"Write a dictation"}/>
+          <Button onPress={() => navigate('DictationSettings')} text={"Write a dictation"}/>
           <Button onPress={() => navigate('Vocabulary')} text={"Your words"}/>
           <Button onPress={() => navigate('Translator')} text={"Translator"} />
         </View>

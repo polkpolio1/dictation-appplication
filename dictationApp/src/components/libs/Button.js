@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginTop: 5,
     padding:10,
-    height:45,
     borderRadius:4,
     backgroundColor: '#000',
     alignSelf: 'stretch'
@@ -55,7 +54,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginTop: 5,
     padding:10,
-    height:45,
     borderRadius:4,
     backgroundColor: '#fff',
     alignSelf: 'stretch'

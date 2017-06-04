@@ -52,10 +52,8 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     borderWidth: 1,
     borderRadius: 4,
-    height: 40,
     fontSize: 16,
-    paddingLeft: 10,
-    paddingRight: 10,
+    padding: 10,
     marginBottom: 10,
   },
 })

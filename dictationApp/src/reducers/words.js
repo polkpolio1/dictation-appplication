@@ -3,74 +3,62 @@ import * as types from '../constants/actionTypes'
 let initialState = [
   {
     id: 0,
-    word: 'Hello',
+    word: 'hello',
     translation: 'Приве, Ку',
     learned: false
   },
   {
     id: 1,
-    word: 'Man',
+    word: 'man',
     translation: 'Мужик',
-    learned: true
+    learned: false
   },
   {
     id: 2,
-    word: 'Man',
-    translation: 'Мужик',
+    word: 'girl',
+    translation: 'девочка',
     learned: false
   },
   {
     id: 3,
-    word: 'Man',
-    translation: 'Мужик',
+    word: 'home',
+    translation: 'дом',
     learned: false
   },
   {
     id: 4,
-    word: 'Man',
-    translation: 'Мужик',
+    word: 'car',
+    translation: 'машина',
     learned: false
   },
   {
     id: 5,
-    word: 'Man',
-    translation: 'Мужик',
+    word: 'bus',
+    translation: 'автобус',
     learned: false
   },
   {
     id: 6,
-    word: 'Man',
-    translation: 'Мужик',
+    word: 'food',
+    translation: 'еда',
     learned: false
   },
   {
     id: 7,
-    word: 'Man',
-    translation: 'Мужик',
+    word: 'device',
+    translation: 'устройство',
     learned: false
   },
   {
     id: 8,
-    word: 'Man',
-    translation: 'Мужик',
+    word: 'keyboard',
+    translation: 'клавиатура',
     learned: false
   },
   {
     id: 9,
-    word: 'Man',
-    translation: 'Мужик',
-    learned: false
-  },
-  {
-    id: 10,
-    word: 'Man',
-    translation: 'Мужик',
-    learned: false
-  },
-  {
-    id: 11,
-    word: 'Man',
-    translation: 'Мужик',
+    word: 'plane',
+    translation: 'самолет',
     learned: false
   }
 ]

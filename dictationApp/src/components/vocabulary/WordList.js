@@ -14,7 +14,7 @@ const WordList = ({onToggleClick, words}) => {
       <Text style={styles.header}>
         List of words:
       </Text>
-      <ScrollView style={styles.wordList}>
+      <ScrollView>
         {words.map((word) => (
           <Word 
             key={word.id}

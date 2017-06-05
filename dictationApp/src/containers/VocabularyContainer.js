@@ -37,9 +37,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const VisibleWordList = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Vocabulary)
-
-export default VisibleWordList

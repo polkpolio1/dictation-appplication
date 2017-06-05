@@ -12,4 +12,4 @@ const App = () => (
   </Provider>
 )
 
-AppRegistry.registerComponent('dictationApp', () => App);
+AppRegistry.registerComponent('dictationApp', () => App)

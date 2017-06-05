@@ -1,30 +1,30 @@
-import { fetch } from "fetch";
+import { fetch } from "fetch"
 import * as types from '../constants/actionTypes'
 import {
   Alert
 } from 'react-native'
 
-function requestTranslation() {
+const requestTranslation = () => {
   return {
     type: types.FETCH_TRANSLATION_REQUEST
   }
 }
 
-function receiveTranslation(translation){
+const receiveTranslation = (translation) => {
   return {
     type: types.FETCH_TRANSLATION_SUCCESS,
     payload: translation
   }
 }
 
-function failureTranslation(err){
+const failureTranslation = (err) => {
   return {
     type: types.FETCH_TRANSLATION_FAILURE,
     payload: err
   }
 }
 
-export function fetchTranslation(text) {
+export const fetchTranslation = (text) => {
   return dispatch => {
     dispatch(requestTranslation())
     return fetch('http://www.transltr.org/api/translate?to=ru&from=en&text=' + text)
@@ -35,8 +35,13 @@ export function fetchTranslation(text) {
         dispatch(receiveTranslation(response.translationText))
       })
       .catch((err) => {
-        console.log("ERR", err)
         dispatch(failureTranslation(err))
     })
+  }
+}
+
+export const clearTranslation = () => {
+  return {
+    type: types.CLEAR_TRANSLATION
   }
 }

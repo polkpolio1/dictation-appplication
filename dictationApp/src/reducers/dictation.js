@@ -9,9 +9,10 @@ const dictation = (state = [], action) => {
       ]	
 	case types.SET_ANSWER:
 		return state.map((word, index) => 
-			index == action.id ? Object.assign(word, {
+			index == action.id ? {
+        ...word,
 				answer: action.answer
-			}) : word
+			} : word
 		)
     default:
       return state

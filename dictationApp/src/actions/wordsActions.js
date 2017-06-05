@@ -1,7 +1,5 @@
 import * as types from '../constants/actionTypes'
-import {
-  AsyncStorage
-} from 'react-native'
+import { AsyncStorage } from 'react-native'
 
 export const receiveWords = (words) => {
   return {

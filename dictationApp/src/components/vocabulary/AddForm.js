@@ -7,6 +7,7 @@ import {
 import Button from '../libs/Button'
 
 export default class WordList extends Component {
+
   constructor(props){
     super(props)
     this.onPress = this.onPress.bind(this)
@@ -15,6 +16,7 @@ export default class WordList extends Component {
       translation: ''
     }
   }
+
   onPress(){
     this.props.onAddClick(this.state.word, this.state.translation)
     this.setState({
@@ -22,6 +24,7 @@ export default class WordList extends Component {
       translation: ''
     })
   }
+  
   render() {
     return (
       <View>

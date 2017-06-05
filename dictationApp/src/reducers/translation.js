@@ -26,6 +26,11 @@ export default function reducer(state={
         error: null,
         translation: action.payload,
       }
+    case types.CLEAR_TRANSLATION:
+      return {
+        ...state,
+        translation: '',
+      }
   }
 
   return state

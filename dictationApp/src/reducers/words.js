@@ -1,73 +1,7 @@
 import * as types from '../constants/actionTypes'
 import {
   AsyncStorage,
-} from 'react-native';
-// let initialState = [
-//   {
-//     id: 0,
-//     word: 'hello',
-//     translation: 'Приве, Ку',
-//     learned: false
-//   },
-//   {
-//     id: 1,
-//     word: 'man',
-//     translation: 'Мужик',
-//     learned: false
-//   },
-//   {
-//     id: 2,
-//     word: 'girl',
-//     translation: 'девочка',
-//     learned: false
-//   },
-//   {
-//     id: 3,
-//     word: 'home',
-//     translation: 'дом',
-//     learned: false
-//   },
-//   {
-//     id: 4,
-//     word: 'car',
-//     translation: 'машина',
-//     learned: false
-//   },
-//   {
-//     id: 5,
-//     word: 'bus',
-//     translation: 'автобус',
-//     learned: false
-//   },
-//   {
-//     id: 6,
-//     word: 'food',
-//     translation: 'еда',
-//     learned: false
-//   },
-//   {
-//     id: 7,
-//     word: 'device',
-//     translation: 'устройство',
-//     learned: false
-//   },
-//   {
-//     id: 8,
-//     word: 'keyboard',
-//     translation: 'клавиатура',
-//     learned: false
-//   },
-//   {
-//     id: 9,
-//     word: 'plane',
-//     translation: 'самолет',
-//     learned: false
-//   }
-// ]
-// let initialState;
-// AsyncStorage.getItem('words')
-//   .then(req => initialState = JSON.parse(req))
-
+} from 'react-native'
 
 const word = (state = {}, action, nextId) => {
   switch (action.type) {
@@ -82,10 +16,10 @@ const word = (state = {}, action, nextId) => {
       if (state.id !== action.id) {
         return state
       }
-
-      return Object.assign({}, state, {
+      return {
+        ...state,
         learned: !state.learned
-      })
+      }
 
     default:
       return state
